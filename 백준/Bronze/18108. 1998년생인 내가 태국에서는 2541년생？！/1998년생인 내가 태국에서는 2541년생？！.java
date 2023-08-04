@@ -1,14 +1,17 @@
-
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-
 	public static void main(String[] args) {
-		int y;
-		Scanner sc=new Scanner(System.in);
-		y=sc.nextInt() - 543;
-		System.out.println(y);
-
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			int y = Integer.parseInt(br.readLine());
+			System.out.println(y-543);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
