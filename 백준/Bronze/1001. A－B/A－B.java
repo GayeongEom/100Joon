@@ -1,22 +1,18 @@
-
-import java.io.*;
-import java.util.*;
-
-
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	
-	static int A,B;
-
-	public static void main(String[] args) throws IOException{
-
-		BufferedReader bw = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer token= new  StringTokenizer(bw.readLine());
-		
-		A = Integer.parseInt(token.nextToken());
-		B = Integer.parseInt(token.nextToken());
-		System.out.println(A-B);
+	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			System.out.println(a-b);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-
 }
