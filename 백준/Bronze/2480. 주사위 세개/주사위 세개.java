@@ -1,36 +1,27 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		int x =sc.nextInt();
-		int y =sc.nextInt();
-		int z =sc.nextInt();
-		
-		int prize = 0;
-		
-		if(x==y && y==z) { //3개 같을 때
-			prize = 10000 + (x*1000);
-		
-		} else if(x==y || x==z || y==z) { //2개가 같을 때
-			if(x==y || x==z) {
-				prize = 1000 +(x*100);
-			} else {
-				prize = 1000 +(z*100);
-			}	
-		
-		} else { //모두 다를 때
-			prize = Math.max(x, Math.max(y, z)) * 100;
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(bf.readLine());
+		int A = Integer.parseInt(st.nextToken());
+		int B = Integer.parseInt(st.nextToken());
+		int C = Integer.parseInt(st.nextToken());
+		if(A==B && B==C) {
+			System.out.println(10000+(A*1000));
+		} else if(A!=B && B!=C && A!=C) {
+			int L = Math.max(A, B);
+			L = Math.max(L, C);
+			System.out.println(L*100);
+		} else {
+			int S=0;
+			if(A==B) S=A;
+			else if(B==C) S=B;
+			else S=C;
+			System.out.println(1000+(S*100));
 		}
-		
-		
-		
-		//출력
-		System.out.println(prize);		
-
-		
 	}
-
 }
