@@ -1,32 +1,23 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) {
-
-		Scanner sc = new Scanner(System.in);
-
-		int A = sc.nextInt(); //시
-		int B = sc.nextInt(); //분
-		int C = sc.nextInt(); //필요한 시간
-
-		int endtime = B + C;
-
-		if(endtime>=60) { //n시간 n분 소요될 때
-			A += endtime/60; //A에 n시간 더하기
-			B = endtime-(endtime/60*60);
-
-			if(A>23) { //A가 23시 넘으면 
-				A -= 24;
-			} //A if end
+	public static void main(String[] args) throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(bf.readLine());
+		int H = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		int N = Integer.parseInt(bf.readLine());
+		if((M+N)>=60) {
+			H += (M+N)/60;
+			M = (M+N)%60;
+			if(H>=24) H -= 24;
 		} else {
-			B = endtime;
+			M += N;
 		}
-
-		//출력
-		System.out.println(A + " " + B);
-
-
-
+		System.out.println(H+" "+M);
 	}
 
 }
