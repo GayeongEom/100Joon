@@ -1,31 +1,26 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int X = Integer.parseInt(br.readLine());
+		int N = Integer.parseInt(br.readLine());
+		int total = 0;
+		StringTokenizer st;
 		
-		//입력
-		Scanner sc = new Scanner(System.in);
-		
-		int X = sc.nextInt(); //총금액
-		int N = sc.nextInt(); //구매한 물건 종류의 수
-		
-		int sum=0;
-		
-		//구매내역 합계
-		for(int i=1; i<=N; i++) {
-			int a = sc.nextInt();
-			int b = sc.nextInt();
-			
-			sum += (a*b);
+		for(int i=0; i<N; i++) {
+			st = new StringTokenizer(br.readLine());
+			total += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
 		}
 		
-		//출력
-		if(X==sum) {
+		if(X == total) {
 			System.out.println("Yes");
 		} else {
 			System.out.println("No");
 		}
-
 	}
 
 }

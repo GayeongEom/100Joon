@@ -1,14 +1,14 @@
-# [Bronze V] 영수증 - 25304 
+# [Bronze IV] 영수증 - 25304 
 
 [문제 링크](https://www.acmicpc.net/problem/25304) 
 
 ### 성능 요약
 
-메모리: 13056 KB, 시간: 128 ms
+메모리: 11608 KB, 시간: 76 ms
 
 ### 분류
 
-사칙연산(arithmetic), 구현(implementation), 수학(math)
+사칙연산, 구현, 수학
 
 ### 문제 설명
 
