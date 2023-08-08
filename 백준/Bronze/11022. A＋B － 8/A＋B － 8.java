@@ -1,51 +1,21 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) {
-		
-		//입출력 객체
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		try {
-			//테스트 케이스 개수
-			int T = Integer.parseInt(br.readLine());
-			
-			for(int i=0; i<T; i++) {
-				
-				String tc = br.readLine();
-				
-				int a = Integer.parseInt(tc.split(" ")[0]);
-				int b = Integer.parseInt(tc.split(" ")[1]);
-				
-				int result = a+b;
-				
-				bw.write("Case #" + (i+1) + ": "+ a + " + " + b + " = " + (a+b) + "\n");
-				
-				
-				
-				
-			} //for
-			
-			bw.flush();
-			
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
+		int T = Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		StringBuilder sb = new StringBuilder();
+		for(int i=0; i<T; i++) {
+			st = new StringTokenizer(br.readLine());
+			int A = Integer.parseInt(st.nextToken());
+			int B = Integer.parseInt(st.nextToken());
+			int C = A+B;
+			sb.append("Case #").append((i+1)).append(": ").append(A).append(" + ").append(B).append(" = ").append(C).append("\n");
 		}
-		
-		
-		
-		
-		
-		
-		
+		System.out.println(sb);
 	}
-
 }
