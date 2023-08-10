@@ -1,7 +1,5 @@
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-
         s = s.toLowerCase();
         int a = 0;
         
@@ -9,9 +7,7 @@ class Solution {
             if(s.charAt(i)=='p') a++;
             else if(s.charAt(i)=='y') a--;
         }
-        
-        if(a!=0) answer = false;
 
-        return answer;
+        return a==0;
     }
 }
