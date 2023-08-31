@@ -1,18 +1,14 @@
 class Solution {
     public int solution(int[][] sizes) {
-        int row = 0;
-        int col = 0;
+        int w = 0;
+        int h = 0;
         
-        for(int i=0; i<sizes.length; i++) {
-            if(sizes[i][0]<sizes[i][1]) {
-                int tmp = sizes[i][0];
-                sizes[i][0] = sizes[i][1];
-                sizes[i][1] = tmp;
-            }
-            if(sizes[i][0]>row) row = sizes[i][0];
-            if(sizes[i][1]>col) col = sizes[i][1];
+        for(int[] size : sizes) {
+            w = Math.max(w, Math.max(size[0], size[1]));
+            h = Math.max(h, Math.min(size[0], size[1]));
         }
         
-        return row*col;
+        
+        return w*h;
     }
 }
