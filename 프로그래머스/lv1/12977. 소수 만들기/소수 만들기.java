@@ -11,7 +11,7 @@ class Solution {
                         if(sum%l==0) break;
                         else if(l==sum-1) answer++;
                     }
-                    
+
                 }
             }
         }
