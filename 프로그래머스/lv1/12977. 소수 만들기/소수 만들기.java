@@ -7,9 +7,9 @@ class Solution {
             for(int j=i+1; j<nums.length-1; j++) {
                 for(int k=j+1; k<nums.length; k++) {
                     sum = nums[i] + nums[j] + nums[k];
-                    for(int l=2; l<sum+1; l++) {
-                        if(sum%l==0 && l!=sum) break;
-                        else if(l==sum) answer++;
+                    for(int l=2; l<sum; l++) {
+                        if(sum%l==0) break;
+                        else if(l==sum-1) answer++;
                     }
                     
                 }
