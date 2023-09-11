@@ -1,22 +1,9 @@
-import java.util.*;
-
 class Solution {
     public String[] solution(String[] names) {
-        String[] answer = {};
-        ArrayList<String> arr = new ArrayList<>();
-        
-        for(int i=0; i<names.length; i += 5) {
-            arr.add(names[i]);
-        }
-        
-        answer = new String[arr.size()];
         int idx = 0;
-        
-        for(int i=0; i<arr.size(); i++) {
-            answer[idx++] = arr.get(i);
-        }
-        
-        
+        String[] answer = new String[names.length % 5 == 0 ? names.length / 5 : names.length / 5 + 1];
+        for (int i = 0;i < names.length;i+=5)
+            answer[idx++] = names[i];
         return answer;
     }
 }
