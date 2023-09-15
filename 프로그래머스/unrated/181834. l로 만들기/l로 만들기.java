@@ -3,7 +3,7 @@ class Solution {
         String answer = "";
         
         for(char c : myString.toCharArray()) {
-            answer += (c<108) ? "l" : c;
+            answer += (c<'l') ? "l" : c;
         }
         
         return answer;
